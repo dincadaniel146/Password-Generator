@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PasswordGenerator</title>
+</head>
+<body>
+
+
+<div class="container">
+<div class="columns is-centered">
+<div class="box column is-one-third">
+  <h1 class="title has-text-centered">Password Generator</h1>
+<label for="Length"> Length</label>
+<input class="input"  #passwordInput (input)="PasswordLengthFunction(passwordInput.value)"> <!-- În acest caz, #passwordInput creează o variabilă de referință șablon pe care o puteți folosi pentru a obține o referință la elementul de intrare. --> 
+<br>
+<br>
+<div>
+<input type="checkbox" (change)="IncludeLetters()" name="Use letters" id="">
+<label for="useletters">Use letters ?</label>
+</div>
+<br>
+<div>
+<input type="checkbox" (change)="IncludeNumbers()" name="Use numbers" id="">
+<label for="useletters">Use numbers ?</label>
+</div>
+<br>
+<div>
+<input type="checkbox" (change)="IncludeSymbols()"  name="Use symbols" id="">
+<label for="useletters">Use Symbols?</label>
+</div>
+<br>
+<div>
+<button class="button is-medium is-dark" type="button" [disabled]="!(passwordlength && ( letters || numbers || symbols))" (click)="onButtonClick()">Generate Password</button>
+</div>
+<br>
+<br>
+<div class="box" *ngIf="password">
+<label for="generatedpassword">Your generated Password</label>
+<input class="input" [value]="password" id="" readonly >
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>

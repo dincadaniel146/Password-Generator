@@ -1,0 +1,14 @@
+body{
+    text-align: center;
+}
+label{
+    font: 1rem 'Fira Sans',sans-serif;
+}
+h1{
+    font-size: 200%;
+    padding-bottom: 50px;
+    
+}
+input{
+    margin:0.4rem;
+}
